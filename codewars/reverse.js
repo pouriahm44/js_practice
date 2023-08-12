@@ -8,9 +8,18 @@ function reverse(string) {
   return x;
 }
 //console.log(reverse("Hello world!"));
-function split(para) {
-  for (let index = 0; index < para.length; index++) {
-    if (para[index] == " ") {
+function split(param) {
+  var array = [];
+  var string = "";
+  for (let index = 0; index < param.length; index++) {
+    if (param[index] !== " ") {
+      string = string + param[index];
+    } else {
+      array.push(string);
+      string = "";
     }
   }
+  return array;
 }
+
+console.log(split("hello new world"));
